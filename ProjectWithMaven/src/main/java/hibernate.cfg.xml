@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- google it hibernate dtd-> 1st website-> hibernate configurationi dta-> 
+	copy only DOCTYPE -->
+<!DOCTYPE hibernate-configuration SYSTEM
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- inside session factory we will add our properties -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/myhiber</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		<!-- we use dialet to tell we use mysql -->
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<!-- org.hibernate.dialect/MySQLDialect it isa name of class it will tell 
+			that we are using mysql lanuage -->
+
+		<!-- hbm2ddl.auto update means if there is no table then only it will create 
+			a new table -->
+		<property name="hbm2ddl.auto">update</property>
+		<!-- if we use create it will create new table. it will delete and then 
+			again create -->
+		<property name="show_sql">true</property>
+		<!-- hibernate runs query so we wants to know which query it runs for that 
+			we use show_sql -->
+ 			<mapping class="com.tut.Student"/> <!-- we have to give our class -->
+ 			<mapping class="com.tut.Address"/>
+	</session-factory>
+
+</hibernate-configuration>
